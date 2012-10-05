@@ -13,9 +13,12 @@ end
 
 get '/' do
   @lamps = all_lamps
-  erb(:index, :layout => :common_layout)
+  erb :index, :layout => :common_layout
 end
 
+get'/about' do
+	erb :about, :layout => :common_layout
+end		
 
 get '/lamps/:id' do
   @lamp = find_lamp_by_id(params)
@@ -33,7 +36,6 @@ post '/submit-order/:id' do
   	if q <= 0
   		#cant order 0 or less
   		@error = "You must order at least one lamp!"
-  		#erb :buy, :layout => :common_layout
   	elsif q > @lamp.quantity
   		#can't order that many either
   		@error = "dont have that many in stock. sorry"

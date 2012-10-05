@@ -1,0 +1,19 @@
+<h3>Viewing <%= @lamp %> Lamp</h3>
+
+<p>
+  The price of a <%= @lamp.color %> <%= @lamp %> Lamp is $<%= @lamp.price %>.
+  <br/>
+  Or choose a color:
+  <select>
+  	<option>Color</option>
+  	<option>Red</option>
+  	<option>Green</option>
+  	<option>Cyan</option>
+  	<option>Yellow</option>
+  	<option>Magenta</option>
+  </select>
+</p>
+
+<img src="/img/lamps/<%= @lamp.id %>.png" height="300px" />
+
+<a href="/">Back to Home</a>
